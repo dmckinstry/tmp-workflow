@@ -17,11 +17,11 @@ on:
 jobs:
   build:
     env:
-      single: one line
-      double: |
+      SINGLE: one line
+      DOUBLE: |
         one
         two
-      spaced: |
+      SPACED: |
         one
 
         three
@@ -30,8 +30,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run a one-line script
-        run: |
-          echo $SINGLE
-          echo $DOUBLE
-          echo $SPACED
+      - run: echo $SINGLE
+      - run: echo $DOUBLE
+      - run: echo $SPACED
